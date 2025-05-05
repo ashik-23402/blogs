@@ -98,6 +98,8 @@ for (int i = 0; i < 5000; i++) {
 
 ## ⚙️ How to Use Virtual Threads in Spring Boot
 
+Enabling virtual threads in Spring Boot is straightforward. For Spring Boot 3.2 and later, add this property to your application.properties:
+
 ```properties
 spring.threads.virtual.enabled=true
 ```
