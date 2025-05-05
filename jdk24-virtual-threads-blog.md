@@ -1,6 +1,9 @@
 
 # 🚀 JDK 24 Makes Virtual Threads Even Better (No More Pinning!)
 
+![featureImg](https://github.com/user-attachments/assets/9d1a6473-06bd-46e7-aac3-fb05c922e88e)
+
+
 Java’s new **virtual threads** made it easier to build fast, scalable apps. But in **JDK 21**, there was one big problem — if your code used `synchronized` methods or blocks, virtual threads didn’t work as well as they should.
 
 Now with **JDK 24**, that problem is fixed. Let’s take a look at what changed and why it matters — even for older codebases!
