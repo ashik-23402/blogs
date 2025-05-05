@@ -75,7 +75,7 @@ public class BlockSynchronizedCounter {
 ### ⚡ Example 1: Simple Java Benchmark
 
 ```java
-for (int i = 0; i < NUM_THREADS; i++) {
+for (int i = 0; i < 5000; i++) {
     final Object lock = new Object();
     executor.submit(() -> {
         try {
