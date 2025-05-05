@@ -96,35 +96,6 @@ for (int i = 0; i < 5000; i++) {
 - 🐢 **JDK 21:** 31.791 seconds  
 - 🚀 **JDK 24:** 0.454 seconds  
 
-### 📦 Example 2: Spring Boot Inventory System
-
-```java
-@Service
-public class InventoryService {
-
-    private final Map<String, Integer> inventory = new ConcurrentHashMap<>();
-    private final ConcurrentHashMap<String, Object> productLocks = new ConcurrentHashMap<>();
-
-    public boolean updateInventory(String productId, int quantity) {
-        Object lock = productLocks.computeIfAbsent(productId, k -> new Object());
-
-        synchronized (lock) {
-            int stock = inventory.getOrDefault(productId, 0);
-            if (stock + quantity < 0) return false;
-
-            dbService.persistInventoryChange(productId, quantity);
-            inventory.put(productId, stock + quantity);
-            return true;
-        }
-    }
-}
-```
-
-**Results:**
-
-- 🐌 **JDK 21:** 800 requests/sec  
-- 🏎️ **JDK 24:** 4,264 requests/sec  
-
 ## ⚙️ How to Use Virtual Threads in Spring Boot
 
 ```properties
